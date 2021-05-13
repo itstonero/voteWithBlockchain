@@ -1,0 +1,2 @@
+export const WEB3_INITIALIZE:string = "INITIALIZE_WEB3";
+export const WEB_3_ASYNC_INITIALIZE:string = "ASYNC_INITIALIZE";

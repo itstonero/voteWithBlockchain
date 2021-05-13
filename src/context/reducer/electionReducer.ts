@@ -1,19 +1,20 @@
 import { Web3State } from "../../models/web3State";
 import { initiatelizeWeb3 } from "../../services/web3";
+import { WEB3_INITIALIZE, WEB_3_ASYNC_INITIALIZE } from "../actions/electionActions";
 
  
 export const electionReducer = (state:any, action:any) => {
     console.log(action);
     switch(action.type)
     {
-        case "INITIALIZE":
-            initiatelizeWeb3(new Web3State()).then((x:Web3State) => {
-                action.dispatch({type: "LOAD_WEB3", payload: x });
+        case WEB_3_ASYNC_INITIALIZE:
+            initiatelizeWeb3(new Web3State()).then((payload:Web3State) => {
+                action.dispatch({type: WEB3_INITIALIZE, payload });
             });
             return state;
-            
-        case "LOAD_WEB3":
-            return { ...state, ...action.payload };
+
+        case WEB3_INITIALIZE:
+            return { ...state, isLoading: false, ...action.payload };
 
         default:
             return state;
