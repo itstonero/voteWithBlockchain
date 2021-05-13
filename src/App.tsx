@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { initiatelizeWeb3 } from "./services/web3"
@@ -6,7 +6,12 @@ import { Web3State } from './models/web3State';
 
 function App() {
   
-  initiatelizeWeb3(new Web3State())
+  useEffect(() => {
+    initiatelizeWeb3(new Web3State()).then(async (webState:Web3State) => {
+      console.log(webState);
+      console.log(`Total Canditates :: ${await webState.contract?.methods.totalCandidates().call()}`);
+    });
+  }, []);
 
   return (
     <div className="App">
