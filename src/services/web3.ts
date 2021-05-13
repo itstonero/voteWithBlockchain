@@ -6,7 +6,7 @@ const contractConfig = require('../config/electionContract.json');
 const initiatelizeWeb3 = async (state: Web3State) : Promise<Web3State> => 
 {
     state.web3 = new Web3(state.currentProvider || contractConfig.DEFAULT_PROVIDER);
-    state.web3?.setProvider(state.currentProvider);
+    state.currentProvider = state.web3.currentProvider;
     await initiatelizeContract(state);
     return state;
 }
