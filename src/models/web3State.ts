@@ -1,4 +1,5 @@
 import Web3 from 'web3';
+import { Candidate } from './candidate';
 
 export class Web3State
 {
@@ -6,4 +7,5 @@ export class Web3State
     web3 ?: Web3;
     currentProvider ?: any;
     contract ?: any;
+    candidates: Array<Candidate> = [];
 }

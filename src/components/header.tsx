@@ -5,6 +5,8 @@ import { ROUTE_CANDIDATES, ROUTE_STATISTICS, ROUTE_VOTE } from "../routes";
 const { Header } = Layout;
 
 export function AppHeader() {
+
+
   return (
         <Header className="header">
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[ useHistory().location.pathname  ]}>

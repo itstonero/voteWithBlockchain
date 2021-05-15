@@ -21,6 +21,12 @@ const initiatelizeContract = async (state: Web3State) : Promise<Web3State> =>
         if(totalCandidates <= 0)
         {
             return await seedContract(state);
+        }else
+        {
+            for(let i = 0; i < totalCandidates; i++)
+            {
+                state.candidates.push(await state.contract.methods.candidates(i).call());
+            }
         }
         
     }
@@ -34,7 +40,7 @@ const seedContract = async (state: Web3State) : Promise<Web3State> =>
         for(let candidate of contractConfig.CANDIDATES)
         {
             state.contract.methods
-                .registerCandidate(candidate.Name, candidate.Bio, candidate.Agenda)
+                .registerCandidate(candidate.Name, candidate.Bio, candidate.Agenda, candidate.photoUrl)
                     .send({ from: state.accounts[0], gas:3000000});
         }
     }

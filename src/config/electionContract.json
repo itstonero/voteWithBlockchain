@@ -1,9 +1,9 @@
 {
     "DEFAULT_PROVIDER" : "ws://localhost:7545",
     "CANDIDATES" : [
-        { "Name": "Goodluck Jonathan", "Bio" : "Calm and Calculative", "Agenda" : "Restoring Power"},
-        { "Name": "Bola Ahmed Tinubu", "Bio" : "We have a plan", "Agenda" : "Giving Change"},
-        { "Name": "Donald Duke", "Bio" : "Young and Ready", "Agenda" : "Mandate to rebuild"}
+        { "Name": "Goodluck Jonathan", "Bio" : "Calm and Calculative", "Agenda" : "Restoring Power", "photoUrl" : "/goodluck.jpg"},
+        { "Name": "Bola Ahmed Tinubu", "Bio" : "We have a plan", "Agenda" : "Giving Change", "photoUrl" : "/jagaban.jpg"},
+        { "Name": "Donald Duke", "Bio" : "Young and Ready", "Agenda" : "Mandate to rebuild", "photoUrl" : "/donald.jpg"}
     ],
     "ADDRESS" : "0xc4B38b4B361844EC1419AA605315126D2e6D108c",
     "ABI" : [   
