@@ -10,7 +10,12 @@ export const electionReducer = (state:any, action:any) => {
     {
         case WEB_3_ASYNC_INITIALIZE:
             initiatelizeWeb3(new Web3State()).then((payload:IInitializationResult) => {
-                action.dispatch({ type: WEB3_INITIALIZE,  payload: {  web3:payload.web3 /*,  flash: {  title: "CONNECTIVITY", message: payload.message,  type: payload.code  }*/ } });
+                if(payload.code === "ERROR")
+                {
+                    return action.dispatch({ type: WEB3_INITIALIZE,  payload: {  web3:payload.web3,  flash: {  title: "CONNECTIVITY", message: payload.message,  type: payload.code  } } });
+                }
+
+                action.dispatch({ type: WEB3_INITIALIZE,  payload: {  web3:payload.web3  } });
             })
             return state;
 
@@ -19,13 +24,13 @@ export const electionReducer = (state:any, action:any) => {
 
         case WEB_3_ASYC_CAST_VOTE:
             castVote(action.payload.candidateId, state.web3).then((x:IVoteCastingResult) => {
-                action.dispatch({ type: WEB_3_CAST_VOTE, payload: { flash: { title: "VOTING", message: x.message, type: x.code }} })
+                action.dispatch({ type: WEB_3_CAST_VOTE, payload: { web3:state.web3, flash: { title: "VOTING", message: x.message, type: x.code }} })
             })
             return { ...state, isLoading:true };
         
         case WEB_3_CAST_VOTE:
             return {...state, ...action.payload, isLoading: false };
-
+            
         default:
             return {...state, flash: undefined };
     }

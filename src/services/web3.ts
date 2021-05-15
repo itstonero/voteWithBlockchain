@@ -83,6 +83,7 @@ const castVote = async(candidateId: number, web3: Web3State) : Promise<IVoteCast
         {
             return { message: "An Error Occurred", code : "ERROR" }; 
         }
+        await loadCandidates(web3);
         return { message: "VOTED SUCCESSFULLY", code : "SUCCESS" };
     } catch (error) {
         return { message: extraBlockError(error.message), code : "ERROR" };

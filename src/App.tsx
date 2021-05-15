@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { electionReducer } from './context/reducer/electionReducer';
-import { WEB_3_ASYNC_INITIALIZE, WEB_3_CAST_VOTE } from './context/actions/electionActions';
+import { WEB_3_ASYNC_INITIALIZE } from './context/actions/electionActions';
 import { Loading } from './components/loader';
 import { AppHeader } from './components/header';
 import { VoteChart } from './components/chart';
