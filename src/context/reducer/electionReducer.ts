@@ -14,7 +14,7 @@ export const electionReducer = (state:any, action:any) => {
             return state;
 
         case WEB3_INITIALIZE:
-            return { ...state, isLoading: false, ...action.payload };
+            return { ...state, isLoading: false, web3:action.payload };
 
         default:
             return state;
