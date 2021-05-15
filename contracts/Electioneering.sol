@@ -18,6 +18,7 @@ contract Electioneering {
         string bio;
         string agenda;
         uint votes;
+        string photoUrl;
     }
 
     mapping(address => Voter) public voters;
@@ -29,9 +30,9 @@ contract Electioneering {
         _;
     }
     
-  function registerCandidate(string memory name, string memory bio, string memory agenda) onlyCreator public returns(bool)
+  function registerCandidate(string memory name, string memory bio, string memory agenda, string memory photoUrl) onlyCreator public returns(bool)
   {
-    candidates[totalCandidates] = Candidate(name, bio, agenda, 0);
+    candidates[totalCandidates] = Candidate(name, bio, agenda, 0, photoUrl);
     totalCandidates += 1;
     return true;
   }
