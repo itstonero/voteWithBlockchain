@@ -9,3 +9,10 @@ export class Web3State
     contract ?: any;
     candidates: Array<Candidate> = [];
 }
+
+export interface IInitializationResult
+{
+    web3 : Web3State;
+    message : string;
+    code : string;
+}

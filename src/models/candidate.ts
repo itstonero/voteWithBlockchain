@@ -1,5 +1,6 @@
 export class Candidate
 {
+    id ?: number;
     name:string;
     bio: string;
     agenda: string;
@@ -13,4 +14,10 @@ export class Candidate
         this.agenda = _agenda;
         this.votes = totalVotes;
     }
+}
+
+export interface IVoteCastingResult
+{
+    message : string;
+    code : string;
 }
