@@ -3,6 +3,7 @@ import { ElectionContext } from "../App";
 import { Candidate } from '../models/candidate';
 import { IReducer } from "../models/IReducer";
 import { Card } from 'antd'
+
 function CandidateComponent({ candidate }:any)
 {    
     return (

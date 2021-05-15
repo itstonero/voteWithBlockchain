@@ -5,9 +5,9 @@
         { "Name": "Bola Ahmed Tinubu", "Bio" : "We have a plan", "Agenda" : "Giving Change", "photoUrl" : "/jagaban.jpg"},
         { "Name": "Donald Duke", "Bio" : "Young and Ready", "Agenda" : "Mandate to rebuild", "photoUrl" : "/donald.jpg"}
     ],
-    "ADDRESS" : "0xc4B38b4B361844EC1419AA605315126D2e6D108c",
-    "ABI" : [   
-         {
+    "ADDRESS" : "0x34A4Be653AB27aAe9632f4e05adE6F0AF38A216a",
+    "ABI": [
+      {
         "constant": true,
         "inputs": [
           {
@@ -37,6 +37,11 @@
             "internalType": "uint256",
             "name": "votes",
             "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "photoUrl",
+            "type": "string"
           }
         ],
         "payable": false,
@@ -146,6 +151,11 @@
             "internalType": "string",
             "name": "agenda",
             "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "photoUrl",
+            "type": "string"
           }
         ],
         "name": "registerCandidate",
@@ -206,5 +216,6 @@
         "payable": false,
         "stateMutability": "nonpayable",
         "type": "function"
-      }]
+      }
+    ]
 }
