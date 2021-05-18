@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# Presidential Election 
+ - Powered by Ethereum Smart-Contract
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Environment Setup
+ - To setup the smart contract on your local machine. Kindly follow the prescribed steps/process
+## Smart Contract
+ - clone smart-contract branch by running 
+ - `git clone --single-branch --branch smartContract https://github.com/itstonero/voteWithBlockchain.git smart_contract`
+ - cd smart_contract
+### Ganache
+ - Download from `https://www.trufflesuite.com/ganache`
+ - Install 
+ - Run
+ - Copy RPC SERVER `e.g HTTP://127.0.0.1:7545`
+### Truffle Suite
+ - Run `npm install --global truffle` from `smart_contract` folder
+### MetaMask
+ - Download MetaMask Extension
+ - Install 
+ - Configure GANACHE on Metamask with RPC configuration
+ - Add Account(s) from GANACHE network to Metamask
+### NPM Initialization
+ - Run `npm install` from `smart_contract` to install all dependencies
+### Truffle Deployment
+ - Run `truffle compile` from `smart_contract` folder
+ - Run `truffle migrate` or `truffle migrate --reset` to deploy
+ - Run `truffle test` to validate test cases
 
-## Available Scripts
+### Copy ABI and Smart Contract Address
+ - Open `smart_contract\build\contracts\Electioneering.json`
+ - Copy `abi`
+ - Copy `address` from `networks`
+ #### Congratulations Smart Contract has been successfully deployed to GANACHE
 
-In the project directory, you can run:
+## React Frontend
+ - clone smart-contract branch by running 
+ - `git clone --single-branch --branch reactFrontend https://github.com/itstonero/voteWithBlockchain.git react_frontend`
+ - cd react_frontend
 
-### `npm start`
+ ### NPM Initialization
+ - Run `npm install` to install all dependencies
+ - Open `react_frontend\src\config\electionContract.json`
+ - Paste `abi` from `smart_contract` to `ABI`
+ - Paste `address` from `smart_contract` to `ADDRESS`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Start Application
+ - Run `npm start` to start application
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Congratulations!!
+#### Happy Voting.... Hurrays!!!
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
